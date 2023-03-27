@@ -1,0 +1,115 @@
+
+.header_section {
+    width: 100%;
+    background-color: #fef4ec;
+    height: auto;
+    background-size: 100%;
+}
+.label {
+    display: inline-block;
+    width: 120px;
+  }
+  
+  .value {
+    display: inline-block;
+  }
+.col-md-12{
+    background-color: #fef4ec ;
+}
+#datalist{
+    margin-top: 5%;
+    margin-left: 25%;
+}
+.btn{
+    width: 100%;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #252525;
+    text-align: center;
+    padding: 5px 0px ;
+    border-radius: 5px;
+    text-transform: uppercase
+}
+.btn-1 {
+    width: 7%;
+    font-size: 10px;
+    color: #fef4ec;
+    background-color: black;
+    text-align: center;
+    padding: 3px 0px 0px 10px;
+    border-radius: 5px;
+    text-transform: uppercase
+}
+.btn-1 :visited{
+    width: 7%;
+    font-size: 10px;
+    color: #fef4ec;
+    background-color: black;
+    text-align: center;
+    padding: 3px 0px 0px 10px;
+    border-radius: 5px;
+    text-transform: uppercase
+}
+input[type="text"] {
+    border-radius: 10px;
+}
+
+input[type="email"] {
+    border-radius: 10px;
+}
+
+label {
+    display: inherit !important;
+}
+
+.elements {
+    display: flex !important;
+    width: 50%;
+    justify-content: center !important;
+    flex-direction: column !important;
+    align-content: center !important;
+}
+
+form#myForm {
+    text-align: -webkit-center !important;
+}
+.df.mb-4.col-md-12 {
+    display: flex !important;
+    flex-direction: row !important;
+}
+
+
+@media only screen and (max-width:425px){
+    .elements {
+        width: 75% !important;
+    }
+}
+@media only screen and (max-width:425px){
+    .df.mb-4.col-md-12 {
+        display: flex !important;
+        flex-direction: column-reverse !important;
+    }
+    .elements {
+        width: 75% !important;
+    }
+    .btn-1 {
+        width: 14%;
+        font-size: 10px;
+        color: #fef4ec;
+        background-color: black;
+        text-align: center;
+        padding: 3px 0px 0px 10px;
+        border-radius: 5px;
+        text-transform: uppercase
+    }
+    .btn-1 :visited{
+        width: 14%;
+        font-size: 10px;
+        color: #fef4ec;
+        background-color: black;
+        text-align: center;
+        padding: 3px 0px 0px 10px;
+        border-radius: 5px;
+        text-transform: uppercase
+    }
+}

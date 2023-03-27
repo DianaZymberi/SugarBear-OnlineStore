@@ -1,0 +1,71 @@
+const form = document.getElementById('myForm');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const surname = document.getElementById('surname').value;
+  const phonenumber = document.getElementById('phonenumber').value;
+  const email = document.getElementById('email').value;
+  const zip = document.getElementById('zip').value;
+  const address = document.getElementById('address').value;
+  const state = document.getElementById('state').value;
+
+  const formData = {
+    name: name,
+    surname: surname,
+    phonenumber: phonenumber,
+    email: email,
+    zip: zip,
+    address: address,
+    state: state
+  };
+
+  // Generate a unique identifier for the form submission
+  const timestamp = Date.now();
+  const cookieName = `formData_${timestamp}`;
+
+  // Get the existing form data cookies
+  const existingFormDataCookies = getFormDataCookies();
+
+  // Check if a cookie with the same name already exists
+  if (getCookie(cookieName) !== null) {
+    // Update the existing cookie value
+    existingFormDataCookies[cookieName] = formData;
+  } else {
+    // Add the new cookie to the existing cookies
+    existingFormDataCookies[cookieName] = formData;
+  }
+
+  // Set the merged form data as cookies
+  for (const [name, value] of Object.entries(existingFormDataCookies)) {
+    document.cookie = `${name}=${JSON.stringify(value)}; expires=${new Date(Date.now() + 86400e3).toUTCString()}`;
+  }
+
+  function getCookie(name) {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      if (cookie.startsWith(`${name}=`)) {
+        return cookie.substring(name.length + 1);
+      }
+    }
+    return null;
+  }
+
+  function getFormDataCookies() {
+    const cookies = document.cookie.split(';');
+    const formDataCookies = {};
+
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      if (cookie.startsWith('formData_')) {
+        const cookieName = cookie.substring(0, cookie.indexOf('='));
+        const cookieValue = JSON.parse(cookie.substring(cookie.indexOf('=') + 1));
+        formDataCookies[cookieName] = cookieValue;
+      }
+    }
+
+    return formDataCookies;
+  }
+});
