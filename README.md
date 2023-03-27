@@ -14,7 +14,7 @@ It has a nav bar that scrolles in the right side, then it has a carousel that sh
 After you click on the section for buying our product you will be sent to the product shipping page where you will have to put your shipping information.  Each input is validated using JavaScript, it shows an error if you put wrong data in the inputs. When you submit the information you have put in the inputs will be saved in cookies. And then you will be taken to the checkout page.
 
 # Checkout Page
-The Checkout Page is kind of similar to the Product Shipping Page, you will have to enter some information about your payment. But in the left side you will se shipping data that we retrieved from cookies using AJAX. Inputs are also validated client side and server side. After we fill the data and submit them the information will be stored in the database using PHP. 
+The Checkout Page is kind of similar to the Product Shipping Page, you will have to enter some information about your payment. But in the left side you will se shipping data that we retrieved from cookies using JavaScript. Inputs are also validated client side and server side. After we fill the data and submit them the information will be sent in a PHP script using AJAX. Then the data from the Product Shipping Page together with Checkout Pages's data will stored in the database using PHP. 
 
 # Thankyou Page
 After submiting the data in the Checkout Page you will be sent in Thank you page. You will see that your order has been done succesfuly, and there is a button that when you click it send you back home.
